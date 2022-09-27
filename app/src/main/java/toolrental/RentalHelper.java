@@ -15,7 +15,7 @@ public class RentalHelper {
     private LocalDate dueDate;
     //Needs leading 0
     private final DateTimeFormatter rentalDateFormat = DateTimeFormatter.ofPattern("MM/dd/yy");
-    //Alternative so we can take in dates as listed in sample test casesJAKR
+    //Alternative so we can take in dates as listed in sample test cases
     private final DateTimeFormatter altInputRentalDateFormat = DateTimeFormatter.ofPattern("M/d/yy");
 
 

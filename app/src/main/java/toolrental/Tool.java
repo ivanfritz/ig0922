@@ -43,9 +43,6 @@ public class Tool {
         }
     }
 
-    //Note: dailyCharge will be stored as a whole number. We will divide by 100
-    //before presenting result to avoid rounding issues and to make calc easier.
-    //Ex: 199/100 = $1.99
     private void setToolCharges() {
         switch (this.toolType.toUpperCase()) {
             case "LADDER":
