@@ -111,7 +111,7 @@ public class RentalDetailsTest {
     @Test
     public void testEmptyCheckoutDate() {
 
-        String expectedError = "Got an unexpected checkout date of '' please use dates in format of M/d/yy";
+        String expectedError = "Got an unexpected checkout date of '' please use dates in format of mm/dd/yy";
         String actualError = "";
         try {
             RentalDetails rental = new RentalDetails("JAKR", "", 5, 0);
@@ -130,7 +130,7 @@ public class RentalDetailsTest {
     @Test
     public void testInvalidCheckoutDateFormat() {
 
-        String expectedError = "Got an unexpected checkout date of '9-25-22' please use dates in format of M/d/yy";
+        String expectedError = "Got an unexpected checkout date of '9-25-22' please use dates in format of mm/dd/yy";
         String actualError = "";
         try {
             RentalDetails rental = new RentalDetails("JAKR", "9-25-22", 5, 0);

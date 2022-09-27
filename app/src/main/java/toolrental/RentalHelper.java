@@ -13,7 +13,11 @@ public class RentalHelper {
 
     private final HolidayHelper holidayUtil = new HolidayHelper();
     private LocalDate dueDate;
-    private final DateTimeFormatter rentalDateFormat = DateTimeFormatter.ofPattern("M/d/yy");
+    //Needs leading 0
+    private final DateTimeFormatter rentalDateFormat = DateTimeFormatter.ofPattern("MM/dd/yy");
+    //Alternative so we can take in dates as listed in sample test casesJAKR
+    private final DateTimeFormatter altInputRentalDateFormat = DateTimeFormatter.ofPattern("M/d/yy");
+
 
     private boolean isDateWeekend(LocalDate checkDate) {
         switch (checkDate.getDayOfWeek().toString()) {
@@ -86,6 +90,10 @@ public class RentalHelper {
 
     public DateTimeFormatter getRentalDateFormat() {
         return rentalDateFormat;
+    }
+    
+    public DateTimeFormatter getAltRentalDateFormat() {
+        return altInputRentalDateFormat;
     }
 
     public String formatOutputDate(LocalDate date) {

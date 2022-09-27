@@ -15,7 +15,7 @@ public class App {
         System.out.println("Enter tool code:");
         toolCode = br.readLine().strip();
         
-        System.out.println("Enter Checkout Date as M/d/yy:");
+        System.out.println("Enter Checkout Date as mm/dd/yy:");
         checkoutDate = br.readLine().strip();
         
         try {

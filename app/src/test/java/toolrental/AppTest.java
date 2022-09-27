@@ -42,8 +42,8 @@ public class AppTest {
         expected.put("type", "Ladder");
         expected.put("brand", "Werner");
         expected.put("rentalDays", "3");
-        expected.put("checkoutDate", "7/2/20");
-        expected.put("dueDate", "7/5/20");
+        expected.put("checkoutDate", "07/02/20");
+        expected.put("dueDate", "07/05/20");
         expected.put("dailyCharge", "$1.99");
         expected.put("billableDays", "2");
         expected.put("preDiscountCharge", "$3.98");
@@ -69,8 +69,8 @@ public class AppTest {
         expected.put("type", "Chainsaw");
         expected.put("brand", "Stihl");
         expected.put("rentalDays", "5");
-        expected.put("checkoutDate", "7/2/15");
-        expected.put("dueDate", "7/7/15");
+        expected.put("checkoutDate", "07/02/15");
+        expected.put("dueDate", "07/07/15");
         expected.put("dailyCharge", "$1.49");
         expected.put("billableDays", "3");
         expected.put("preDiscountCharge", "$4.47");
@@ -96,8 +96,8 @@ public class AppTest {
         expected.put("type", "Jackhammer");
         expected.put("brand", "DeWalt");
         expected.put("rentalDays", "6");
-        expected.put("checkoutDate", "9/3/15");
-        expected.put("dueDate", "9/9/15");
+        expected.put("checkoutDate", "09/03/15");
+        expected.put("dueDate", "09/09/15");
         expected.put("dailyCharge", "$2.99");
         expected.put("billableDays", "3");
         expected.put("preDiscountCharge", "$8.97");
@@ -124,8 +124,8 @@ public class AppTest {
         expected.put("type", "Jackhammer");
         expected.put("brand", "Ridgid");
         expected.put("rentalDays", "9");
-        expected.put("checkoutDate", "7/2/15");
-        expected.put("dueDate", "7/11/15");
+        expected.put("checkoutDate", "07/02/15");
+        expected.put("dueDate", "07/11/15");
         expected.put("dailyCharge", "$2.99");
         expected.put("billableDays", "5");
         expected.put("preDiscountCharge", "$14.95");
@@ -153,8 +153,8 @@ public class AppTest {
         expected.put("type", "Jackhammer");
         expected.put("brand", "Ridgid");
         expected.put("rentalDays", "4");
-        expected.put("checkoutDate", "7/2/20");
-        expected.put("dueDate", "7/6/20");
+        expected.put("checkoutDate", "07/02/20");
+        expected.put("dueDate", "07/06/20");
         expected.put("dailyCharge", "$2.99");
         expected.put("billableDays", "1");
         expected.put("preDiscountCharge", "$2.99");

@@ -22,9 +22,8 @@ public class RentalDetails {
     BigDecimal finalCharge;
     int billableDays;
     Tool rentedTool;
-    DateTimeFormatter rentalDateFormat;
     RentalHelper rentalHelper;
-    HashMap<String,String> checkedOutTool = new HashMap<>();
+    HashMap<String, String> checkedOutTool = new HashMap<>();
 
     public RentalDetails(String toolCode, String checkout, int rentalDays, int discount) {
         this.rentalDays = rentalDays;
@@ -32,7 +31,6 @@ public class RentalDetails {
         this.discount = discount;
 
         this.rentalHelper = new RentalHelper();
-        this.rentalDateFormat = rentalHelper.getRentalDateFormat();
         this.rentedTool = new Tool(this.toolCode);
 
         validateRentalDetails(checkout);
@@ -49,19 +47,24 @@ public class RentalDetails {
             throw new IllegalArgumentException("Rental days of '" + rentalDays + "' is unallowed. It must be > 0");
         }
 
-        //Make sure passed in a valid rental date
+        //Make sure passed in a valid rental date. Can have leading 0 or not if < 10.
         try {
-            checkoutDate = LocalDate.parse(checkout, rentalDateFormat);
+            checkoutDate = LocalDate.parse(checkout, rentalHelper.getRentalDateFormat());
         } catch (DateTimeParseException ex) {
-            throw new IllegalArgumentException("Got an unexpected checkout date of '" + checkout + "' please use dates in format of M/d/yy");
+            try {
+                //So can take in dates as written in example test cases
+                checkoutDate = LocalDate.parse(checkout, rentalHelper.getAltRentalDateFormat());
+            } catch (DateTimeParseException ex2) {
+                throw new IllegalArgumentException("Got an unexpected checkout date of '" + checkout + "' please use dates in format of mm/dd/yy");
+            }
         }
     }
-    
+
     private void processRental() {
         billableDays = rentalHelper.getBillableDays(checkoutDate, rentalDays, rentedTool.isChargedWeekdays(), rentedTool.isChargedWeekends(), rentedTool.isChargedHolidays());
         dueDate = rentalHelper.getDueDate();
         preDiscountCharge = rentalHelper.getPrediscountCharge(rentedTool.getDailyCharge(), billableDays);
-        totalDiscount =  rentalHelper.getTotalDiscount(preDiscountCharge, discount);
+        totalDiscount = rentalHelper.getTotalDiscount(preDiscountCharge, discount);
         finalCharge = preDiscountCharge.subtract(totalDiscount);
     }
 
