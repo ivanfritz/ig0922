@@ -34,7 +34,7 @@ public class RentalHelper {
         //Piggybacking to avoid having to set dueData again
         dueDate = startDate.plusDays(rentalDays);
 
-        //According to specs we do not include the intiial checkout date as one of our billable days
+        //According to specs we do not include the initial checkout date as one of our billable days
         //So increment startDate by 1 day so next day is our initial billable date.
         startDate = startDate.plusDays(1);
 
@@ -81,8 +81,7 @@ public class RentalHelper {
     }
 
     public String getMoneyString(BigDecimal amount) {
-        amount = amount.setScale(2, RoundingMode.HALF_UP);
-        return "$" + amount.toPlainString();
+        return "$" + String.format("%,.2f", amount.setScale(2, RoundingMode.HALF_UP)); 
     }
 
     public DateTimeFormatter getRentalDateFormat() {

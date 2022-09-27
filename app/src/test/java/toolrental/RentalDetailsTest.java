@@ -24,7 +24,7 @@ public class RentalDetailsTest {
         } catch (IllegalArgumentException ex) {
             actualError = ex.getMessage().strip();
         }
-        assertEquals(expectedError, actualError, "reee");
+        assertEquals(expectedError, actualError);
     }
 
     /**
